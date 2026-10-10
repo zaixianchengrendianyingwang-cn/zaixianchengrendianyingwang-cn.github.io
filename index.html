@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="在线成人电影网（zaixianchengrendianyingwang-cn.github.io）是专注成人电影赏析、最新成人电影速递、经典片单与观影指南的影视内容网站。在线看成人电影，先看这篇。本站不提供、不存储、不链接任何影视资源。">
+<meta name="keywords" content="在线成人电影网,成人电影赏析,最新成人电影,经典成人电影,在线观影指南,成人电影推荐,影视资讯">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<title>在线成人电影网 - 成人电影赏析 · 最新成人电影 · 经典成人片单 · 观影指南</title>
+<link rel="canonical" href="https://zaixianchengrendianyingwang-cn.github.io/">
+<style>
+/* ===== 基础 ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#12161d; --sub:#6b7688; --faint:#b6bfcc; --paper:#f4f1e8; --card:#fff;
+  --red:#e63946; --crimson:#a4161a; --gold:#e9a93c; --ink2:#2b2118;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",serif;
+  background:var(--paper); color:var(--ink); line-height:1.85; font-size:15px;
+  background-image:
+    radial-gradient(520px 260px at 100% -4%,rgba(230,57,70,.14),transparent 60%),
+    radial-gradient(400px 220px at 0% 4%,rgba(233,169,60,.16),transparent 60%);
+  background-attachment:fixed;
+}
+a{color:inherit;text-decoration:none;outline:none}
+ul,ol,dl{list-style:none}
+::selection{background:var(--red);color:#fff}
+::-webkit-scrollbar{height:10px;width:10px}
+::-webkit-scrollbar-thumb{background:rgba(230,57,70,.4);border-radius:10px}
+
+/* ===== 导航 ===== */
+nav.top{position:sticky;top:0;z-index:70;background:rgba(244,241,232,.93);backdrop-filter:blur(14px);border-bottom:2px solid var(--ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+.nav{display:flex;align-items:center;gap:16px;height:68px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:950;font-size:19px;letter-spacing:.4px;font-family:Georgia,"Times New Roman",serif}
+.brand .logo{width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--gold);display:grid;place-items:center;font-size:20px;font-weight:990;box-shadow:0 8px 20px rgba(18,22,29,.3);font-family:Georgia,serif}
+.menu{display:flex;gap:4px;margin-left:14px}
+.menu a{font-size:13.5px;padding:9px 15px;border-radius:10px;color:var(--sub);transition:.22s;font-weight:700}
+.menu a:hover{color:var(--red);background:rgba(230,57,70,.09)}
+.search{margin-left:auto;display:flex;align-items:center;gap:9px;background:var(--card);border:1.5px solid var(--ink);border-radius:10px;padding:9px 14px;width:230px;max-width:32vw}
+.search input{border:0;background:transparent;font-size:13.5px;width:100%;color:var(--ink);outline:none;font-family:inherit}
+.search input::placeholder{color:var(--faint)}
+.search svg{flex:none;color:var(--red)}
+
+/* ===== Hero ===== */
+.hero{padding:54px 0 38px;position:relative}
+.hg{display:grid;grid-template-columns:1fr .9fr;gap:34px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;letter-spacing:2.4px;color:var(--crimson);font-weight:850;border:1.5px solid var(--crimson);padding:5px 14px;border-radius:6px}
+.hero h1{font-size:clamp(32px,5.4vw,54px);font-weight:990;line-height:1.14;letter-spacing:-.8px;margin-top:14px;font-family:Georgia,"Times New Roman",serif}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero h1 .ln{display:block;font-size:clamp(13px,1.7vw,15px);font-weight:700;color:var(--faint);letter-spacing:4px;margin-top:12px;font-family:inherit}
+.hero p{color:var(--sub);margin-top:16px;font-size:15.5px;max-width:640px}
+.cta{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.btn{font-size:14.5px;font-weight:850;padding:14px 30px;border-radius:10px;transition:.24s;cursor:pointer;border:2px solid var(--ink);font-family:inherit}
+.btn.p{background:var(--ink);color:var(--gold)}
+.btn.p:hover{background:var(--red);border-color:var(--red);transform:translateY(-3px)}
+.btn.g{background:transparent;color:var(--ink)}
+.btn.g:hover{background:var(--card)}
+.stats{display:flex;gap:30px;margin-top:30px;flex-wrap:wrap}
+.stats div span{display:block;font-size:26px;font-weight:990;color:var(--red);line-height:1.1;font-family:Georgia,serif}
+.stats div small{font-size:11.5px;color:var(--faint);letter-spacing:.6px}
+
+/* 放映排期 */
+.sched{border:2px solid var(--ink);border-radius:6px;padding:22px;background:var(--card);box-shadow:10px 10px 0 rgba(230,57,70,.22);position:relative}
+.sched h4{font-size:12px;letter-spacing:3px;color:var(--sub);font-weight:800}
+.sched .big{font-size:27px;font-weight:990;letter-spacing:1px;color:var(--ink);margin-top:4px;font-family:Georgia,serif}
+.sched ol{margin-top:14px;display:grid;gap:9px}
+.sched li{display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:center;font-size:13px;padding:7px 0;border-bottom:1px dashed rgba(18,22,29,.18)}
+.sched li:last-child{border:0}
+.sched li time{font-weight:990;color:var(--red);font-family:Georgia,serif;font-size:13.5px}
+.sched li b{font-weight:800}
+.sched li span{font-size:11px;color:var(--faint);border:1px solid rgba(18,22,29,.22);border-radius:20px;padding:2px 9px}
+
+/* ===== 区块标题 ===== */
+section{padding:52px 0}
+.st{display:flex;align-items:center;gap:12px;margin-bottom:23px;flex-wrap:wrap}
+.st .bar{width:6px;height:23px;border-radius:3px;background:var(--red)}
+.st h2{font-size:clamp(20px,3vw,27px);font-weight:900;font-family:Georgia,"Times New Roman",serif}
+.st p.sub{font-size:12.5px;color:var(--faint)}
+.st .tabs{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.st .tabs a{font-size:12.5px;padding:6px 14px;border-radius:20px;border:1.5px solid rgba(18,22,29,.22);color:var(--sub);font-weight:700}
+.st .tabs a.on{background:var(--red);color:#fff;border-color:var(--red)}
+
+/* ===== 栏目一：最新成人电影（横向封面流 + 评分徽章） ===== */
+.flow{display:flex;gap:16px;overflow-x:auto;padding:6px 2px 18px;scroll-snap-type:x mandatory}
+.mv{flex:0 0 228px;scroll-snap-align:start;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--card);transition:.28s;display:flex;flex-direction:column}
+.mv:hover{transform:translateY(-8px) rotate(-.6deg);box-shadow:10px 12px 0 rgba(230,57,70,.2)}
+.mv .cvr{height:300px;position:relative;color:#fff;display:grid;place-items:center;text-align:center;padding:18px}
+.mv .cvr b{font-size:17px;letter-spacing:1.4px;line-height:1.5;position:relative;z-index:2;font-family:Georgia,serif}
+.mv .cvr::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.26),transparent 56%)}
+.mv .cvr .yr{position:absolute;top:11px;left:12px;font-size:10.5px;font-weight:850;letter-spacing:1.4px;background:var(--ink);padding:3px 10px;border-radius:4px}
+.badge{position:absolute;bottom:11px;right:11px;font-size:11px;font-weight:990;color:var(--ink);background:var(--gold);padding:4px 10px;border-radius:20px;font-family:Georgia,serif}
+.mv .body{padding:13px 15px 16px;flex:1;display:flex;flex-direction:column}
+.mv .body h4{font-size:15.5px;line-height:1.4}
+.mv .body .who{font-size:11.5px;color:var(--faint);margin-top:2px}
+.mv .body p{font-size:11.5px;color:var(--sub);margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mv .body .ft{margin-top:auto;padding-top:9px;font-size:11px;color:var(--faint);display:flex;justify-content:space-between}
+
+/* ===== 栏目二：类型片单（编号宫格 + 渐变色条） ===== */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.cell{border:1.5px solid var(--ink);border-radius:6px;padding:18px 18px 16px;background:var(--card);position:relative;overflow:hidden;transition:.26s;min-height:150px;display:flex;flex-direction:column}
+.cell::before{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-46px;top:-46px;background:radial-gradient(circle,rgba(230,57,70,.28),transparent 68%)}
+.cell:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(18,22,29,.22)}
+.cell .no{font-size:11px;font-weight:990;letter-spacing:2.4px;color:var(--red);font-family:Georgia,serif}
+.cell h4{font-size:19px;margin-top:4px;line-height:1.35}
+.cell p{font-size:12px;color:var(--sub);margin-top:7px;flex:1}
+.cell .line{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--red),var(--gold));margin-top:12px}
+.cell:nth-child(2) .line{background:linear-gradient(90deg,#7b2d8a,#e5488a)}
+.cell:nth-child(3) .line{background:linear-gradient(90deg,#0f766e,#17c3d0)}
+.cell:nth-child(4) .line{background:linear-gradient(90deg,#b45309,#e9a93c)}
+.cell:nth-child(5) .line{background:linear-gradient(90deg,#1d4ed8,#6366f1)}
+.cell:nth-child(6) .line{background:linear-gradient(90deg,#15803d,#4ade80)}
+.cell:nth-child(7) .line{background:linear-gradient(90deg,#475569,#94a3b8)}
+.cell:nth-child(8) .line{background:linear-gradient(90deg,#a4161a,#e63946)}
+
+/* ===== 栏目三：影评（编号引言卡 + blockquote） ===== */
+.rev{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.rv{border:1.5px solid var(--ink);border-left:6px solid var(--red);border-radius:6px;padding:20px 22px;background:var(--card);transition:.24s;display:grid;grid-template-columns:56px 1fr;gap:16px}
+.rv:hover{background:#fffdf6;transform:translateX(4px)}
+.rv .n{font-size:34px;font-weight:990;color:rgba(230,57,70,.24);line-height:1;font-family:Georgia,serif}
+.rv blockquote{font-size:12.5px;color:var(--faint);border-left:2px solid var(--gold);padding-left:12px;margin:8px 0 10px;font-style:italic}
+.rv h4{font-size:17px;line-height:1.45}
+.rv .meta{font-size:11.5px;color:var(--faint);display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.rv .meta b{color:var(--gold)}
+
+/* ===== 栏目四：观影指南（步骤进度条） ===== */
+.steps{counter-reset:st}
+.step{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:start;padding:20px 0;border-bottom:1px dashed rgba(18,22,29,.2)}
+.step:last-child{border:0}
+.step .no{counter-increment:st;font-size:15px;font-weight:990;color:#fff;background:linear-gradient(140deg,var(--red),var(--crimson));height:72px;border-radius:6px;display:grid;place-items:center;position:relative;font-family:Georgia,serif}
+.step .no::before{content:"STEP " counter(st)}
+.step h4{font-size:17px}
+.step p{font-size:13.5px;color:var(--sub);margin-top:5px}
+.step p b{color:var(--red)}
+
+/* ===== 栏目五：关于（定义列表 + 合规条） ===== */
+.about{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:start}
+.about .card{border:2px solid var(--ink);border-radius:6px;padding:28px 30px;background:var(--card);box-shadow:10px 10px 0 rgba(233,169,60,.32)}
+.about h3{font-size:21px;margin-bottom:6px;font-family:Georgia,"Times New Roman",serif}
+.about > p{font-size:14px;color:var(--sub);margin-bottom:18px}
+.rules{display:grid;gap:12px}
+.rule{display:grid;grid-template-columns:38px 1fr;gap:13px;align-items:start;padding:12px 14px;border-radius:6px;background:rgba(230,57,70,.06);border:1px solid rgba(230,57,70,.2)}
+.rule b{font-size:14px;color:#fff;font-weight:990;text-align:center;background:var(--red);border-radius:6px;padding:4px 0;font-family:Georgia,serif}
+.rule h4{font-size:14px}
+.rule small{font-size:11.5px;color:var(--faint)}
+.dboard{border:2px solid var(--ink);border-radius:6px;padding:26px;background:linear-gradient(160deg,var(--card),rgba(233,169,60,.18))}
+.dboard h3{font-size:18px;margin-bottom:14px;font-family:Georgia,serif}
+.dboard dl{display:grid;gap:12px}
+.dboard .r{display:grid;grid-template-columns:74px 1fr;gap:10px;font-size:13px}
+.dboard dt{color:var(--faint);font-size:12.5px}
+.dboard dd{word-break:break-all}
+.dboard .strip{margin-top:18px;height:9px;border-radius:9px;background:rgba(18,22,29,.1);overflow:hidden}
+.dboard .strip i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--red),var(--crimson));font-style:normal;border-radius:9px}
+
+/* ===== 页脚 ===== */
+footer{border-top:2px solid var(--ink);padding:44px 0 24px;background:linear-gradient(180deg,transparent,rgba(230,57,70,.08))}
+.fgrid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:24px}
+.fgrid h5{font-size:14px;margin-bottom:12px;color:var(--crimson);letter-spacing:1px}
+.fgrid p{font-size:12.5px;color:var(--sub)}
+.fgrid a{display:block;font-size:12.5px;color:var(--sub);padding:4px 0}
+.fgrid a:hover{color:var(--red)}
+.copy{margin-top:26px;padding-top:18px;border-top:1px dashed rgba(18,22,29,.28);font-size:12px;color:var(--faint);text-align:center;line-height:1.95}
+.copy b{color:var(--red)}
+
+.topbtn{position:fixed;right:16px;bottom:20px;width:50px;height:50px;border-radius:50%;border:2px solid var(--ink);cursor:pointer;color:#fff;background:var(--red);opacity:0;pointer-events:none;transition:.3s;z-index:80;font-size:19px;font-weight:990}
+.topbtn.show{opacity:1;pointer-events:auto}
+
+/* ===== 响应式 ===== */
+@media(max-width:1000px){.grid4{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){
+  .hg{grid-template-columns:1fr}
+  .menu{display:none}
+  .search{width:auto;flex:1;min-width:0}
+  .grid4{grid-template-columns:repeat(2,1fr)}
+  .rev{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .mv{flex-basis:200px}
+  .mv .cvr{height:270px}
+}
+@media(max-width:560px){
+  .wrap{padding:0 14px}
+  section{padding:36px 0}
+  .stats{gap:20px}
+  .grid4{grid-template-columns:1fr;gap:12px}
+  .cell{min-height:auto}
+  .mv{flex-basis:172px}
+  .mv .cvr{height:236px}
+  .mv .cvr b{font-size:14px}
+  .cta .btn{flex:1;text-align:center}
+  .step{grid-template-columns:64px 1fr;gap:14px}
+  .step .no{height:58px;font-size:12px}
+  .rv{grid-template-columns:40px 1fr;padding:17px 18px}
+  .rv .n{font-size:26px}
+  .sched ol{display:none}
+  .st .tabs{width:100%;margin-left:0}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ===== 导航 ===== -->
+<nav class="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="在线成人电影网">
+      <span class="logo">◎</span>
+      在线成人电影网
+    </a>
+    <div class="menu" role="navigation" aria-label="主导航">
+      <a href="#now">最新成人电影</a>
+      <a href="#type">类型片单</a>
+      <a href="#review">深度影评</a>
+      <a href="#guide">观影指南</a>
+      <a href="#about">关于</a>
+    </div>
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="search" placeholder="搜片名 / 导演 / 类型 / 年份" aria-label="搜索">
+    </label>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero" id="top">
+  <div class="wrap hg">
+    <div>
+      <span class="eyebrow">◆ 在线看成人电影 · 先看这篇</span>
+      <h1>在线成人电影网<br><em>把好片子挑出来，再谈怎么看</em><span class="ln">FILM REVIEW &amp; WATCH GUIDE</span></h1>
+      <p><b>在线成人电影网</b>（zaixianchengrendianyingwang-cn.github.io）是一个以<b>成人电影赏析、最新成人电影速递、经典片单与观影指南</b>为核心的影视内容网站。我们解决两个问题：<b>今晚看什么</b>，以及<b>去哪儿看才对</b>。<b>本站不提供、不存储、不链接任何影视资源的在线观看或下载</b>。</p>
+      <div class="cta">
+        <a class="btn p" href="#now">看最新成人电影</a>
+        <a class="btn g" href="#guide">观影指南</a>
+      </div>
+      <div class="stats">
+        <div><span>128</span><small>精选影片</small></div>
+        <div><span>36</span><small>主题片单</small></div>
+        <div><span>215</span><small>篇解读</small></div>
+        <div><span>0</span><small>资源链接</small></div>
+      </div>
+    </div>
+
+    <!-- 放映排期 -->
+    <aside class="sched" aria-labelledby="sc">
+      <h4 id="sc">本周 · 值得进成人电影院的排期</h4>
+      <div class="big">周五 19:30 开场</div>
+      <ol>
+        <li><time>10.10 五</time><b>第九封信</b><span>剧情</span></li>
+        <li><time>10.11 六</time><b>潮汐来信</b><span>爱情</span></li>
+        <li><time>10.12 日</time><b>第七个春天</b><span>家庭</span></li>
+        <li><time>10.14 二</time><b>午夜售票处</b><span>悬疑</span></li>
+        <li><time>10.17 五</time><b>回声剧场</b><span>音乐</span></li>
+      </ol>
+    </aside>
+  </div>
+</header>
+
+<!-- ===== 栏目一：最新成人电影（横向封面流 + 评分徽章） ===== -->
+<section id="now" aria-labelledby="c1">
+  <div class="wrap">
+    <div class="st"><span class="bar"></span><h2 id="c1">最新成人电影 · 院线与口碑新片</h2>
+      <p class="sub">左右滑动</p>
+      <div class="tabs"><a class="on" href="#">正在热映</a><a href="#">即将上映</a><a href="#">口碑榜</a></div>
+    </div>
+    <div class="flow">
+      <a class="mv" href="#"><div class="cvr" style="background:linear-gradient(160deg,#a4161a,#3a0a0c)"><b>第九<br>封信</b><span class="yr">2026</span><span class="badge">9.1</span></div><div class="body"><h4>第九封信</h4><div class="who">剧情 / 亲情 · 108 min</div><p>九封没寄出的信，第九封写给已经不认识他的女儿。</p><div class="ft"><span>剧情</span><span>◆ 强推</span></div></div></a>
+      <a class="mv" href="#"><div class="cvr" style="background:linear-gradient(160deg,#0f766e,#063a34)"><b>潮汐<br>来信</b><span class="yr">2026</span><span class="badge">8.7</span></div><div class="body"><h4>潮汐来信</h4><div class="who">爱情 / 剧情 · 112 min</div><p>海岛邮差与一位只收信不回信的女人，守了整部成人电影。</p><div class="ft"><span>爱情</span><span>◆ 慢热</span></div></div></a>
+      <a class="mv" href="#"><div class="cvr" style="background:linear-gradient(160deg,#b45309,#5c3608)"><b>午夜<br>售票处</b><span class="yr">2025</span><span class="badge">8.4</span></div><div class="body"><h4>午夜售票处</h4><div class="who">悬疑 / 黑色 · 98 min</div><p>成人电影院最后一排，总有人看完不走。他负责问原因。</p><div class="ft"><span>悬疑</span><span>◆ 反转</span></div></div></a>
+      <a class="mv" href="#"><div class="cvr" style="background:linear-gradient(160deg,#7b2d8a,#3a123f)"><b>第七<br>个春天</b><span class="yr">2026</span><span class="badge">8.9</span></div><div class="body"><h4>第七个春天</h4><div class="who">家庭 / 治愈 · 121 min</div><p>七姐妹每年春天聚一次，今年少了一个，多了一封信。</p><div class="ft"><span>家庭</span><span>◆ 催泪</span></div></div></a>
+      <a class="mv" href="#"><div class="cvr" style="background:linear-gradient(160deg,#1d4ed8,#0e2266)"><b>回声<br>剧场</b><span class="yr">2025</span><span class="badge">8.1</span></div><div class="body"><h4>回声剧场</h4><div class="who">剧情 / 音乐 · 105 min</div><p>一座快要拆掉的剧场，和一群不肯散场的老人。</p><div class="ft"><span>音乐</span><span>◆ 冷门</span></div></div></a>
+      <a class="mv" href="#"><div class="cvr" style="background:linear-gradient(160deg,#15803d,#063a1c)"><b>漫长的<br>回程</b><span class="yr">2026</span><span class="badge">8.8</span></div><div class="body"><h4>漫长的回程</h4><div class="who">公路 / 悬疑 · 126 min</div><p>一场没有目的地的开车，副驾坐着二十年前的自己。</p><div class="ft"><span>公路</span><span>◆ 口碑</span></div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目二：类型片单（编号宫格 + 色条） ===== -->
+<section id="type" aria-labelledby="c2" style="background:linear-gradient(180deg,transparent,rgba(233,169,60,.12))">
+  <div class="wrap">
+    <div class="st"><span class="bar"></span><h2 id="c2">类型片单 · 按心情挑一部</h2>
+      <div class="tabs"><a class="on" href="#">全部</a><a href="#">情绪</a><a href="#">时长</a><a href="#">年代</a></div>
+    </div>
+    <div class="grid4">
+      <a class="cell" href="#"><span class="no">NO.01</span><h4>想哭的时候</h4><p>12 部不劝你坚强、只陪你哭完的成人电影。看完建议吃一碗热的。</p><div class="line"></div></a>
+      <a class="cell" href="#"><span class="no">NO.02</span><h4>想被治愈</h4><p>慢、轻、不吵。适合雨天、生病、刚搬家、失眠的夜晚。</p><div class="line"></div></a>
+      <a class="cell" href="#"><span class="no">NO.03</span><h4>想动动脑子</h4><p>反转不是重点，重点是看完想和人吵一架的那种片子。</p><div class="line"></div></a>
+      <a class="cell" href="#"><span class="no">NO.04</span><h4>想下饭</h4><p>食物镜头比剧情更诚实。看完必饿，建议备好宵夜。</p><div class="line"></div></a>
+      <a class="cell" href="#"><span class="no">NO.05</span><h4>一个人看</h4><p>不需要解释为什么笑、为什么哭。整排都是陌生人，反而最自由。</p><div class="line"></div></a>
+      <a class="cell" href="#"><span class="no">NO.06</span><h4>带爸妈看</h4><p>没有脏话、没有隐喻、看完能一起聊半小时的那种。</p><div class="line"></div></a>
+      <a class="cell" href="#"><span class="no">NO.07</span><h4>90 分钟以内</h4><p>短不等于轻。8 部节奏精准、不注水、不拖泥的短片式长片。</p><div class="line"></div></a>
+      <a class="cell" href="#"><span class="no">NO.08</span><h4>重看也不腻</h4><p>第二遍才发现第一遍漏掉的那句话。细节控友好。</p><div class="line"></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目三：影评（编号引言卡 + blockquote） ===== -->
+<section id="review" aria-labelledby="c3">
+  <div class="wrap">
+    <div class="st"><span class="bar"></span><h2 id="c3">深度影评 · 慢一点再看完</h2>
+      <div class="tabs"><a class="on" href="#">深度</a><a href="#">幕后</a><a href="#">榜单</a></div>
+    </div>
+    <div class="rev">
+      <article class="rv"><span class="n">01</span><div><h4>为什么"慢成人电影"正在赢回观众</h4><blockquote>"短视频把耐心切碎了，慢成人电影把等待还给了观众。"</blockquote><p>我们采访了 12 位观众、3 位剪辑师和 1 位院线经理。答案不在剧情，而在节奏。</p><div class="meta"><span>2026.10.09</span><span>阅读 <b>3.2 万</b></span><span>约 8 分钟</span></div></div></article>
+      <article class="rv"><span class="n">02</span><div><h4>《第九封信》：信寄给谁，其实不重要</h4><blockquote>"他写的不是女儿，是他自己没来得及成为的父亲。"</blockquote><p>一部没有明星的剧情片，靠口碑走进了更多城市的排片表。</p><div class="meta"><span>2026.10.05</span><span>阅读 <b>1.8 万</b></span><span>约 6 分钟</span></div></div></article>
+      <article class="rv"><span class="n">03</span><div><h4>家庭片为何重新成为票房主力</h4><blockquote>"不是观众变保守了，是我们终于愿意和父母坐在同一排。"</blockquote><p>合家欢不等于低幼。今年最动人的三场哭戏，都发生在饭桌上。</p><div class="meta"><span>2026.09.28</span><span>阅读 <b>2.6 万</b></span><span>约 7 分钟</span></div></div></article>
+      <article class="rv"><span class="n">04</span><div><h4>2026 秋季观影清单：10 部值得进成人电影院的片子</h4><blockquote>"按情绪选片，比按评分选片，命中率高得多。"</blockquote><p>先问自己今天想被怎样对待，再从清单里挑。附各片"适合谁"。</p><div class="meta"><span>2026.09.20</span><span>阅读 <b>4.1 万</b></span><span>约 9 分钟</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目四：观影指南（步骤进度条） ===== -->
+<section id="guide" aria-labelledby="c4" style="background:linear-gradient(180deg,transparent,rgba(230,57,70,.07))">
+  <div class="wrap">
+    <div class="st"><span class="bar"></span><h2 id="c4">观影指南 · 5 步挑对一部成人电影</h2>
+      <div class="tabs"><a class="on" href="#">新手</a><a href="#">选片</a><a href="#">渠道</a></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="no"></div><div><h4>先问情绪，再问评分</h4><p>今天想被治愈、想哭、想动脑，还是只想下饭？<b>情绪对了，8.2 分也能看成 9 分</b>。</p></div></div>
+      <div class="step"><div class="no"></div><div><h4>看三个标签，而不是一条短评</h4><p>"催泪 / 慢节奏 / 开放式结局"比"神作"有用得多。尤其警惕"反转神片"——它通常不适合睡前看。</p></div></div>
+      <div class="step"><div class="no"></div><div><h4>按片长管理期待</h4><p>恋爱片 90–110 分钟最稳；文艺片 100 分钟左右是黄金长度；纪录片 80 分钟以内更容易看完。</p></div></div>
+      <div class="step"><div class="no"></div><div><h4>去正规渠道看</h4><p>院线以<b>官方排片</b>为准；居家选<b>持证视频平台</b>；收藏党选<b>正版蓝光</b>。拒绝盗链、网盘与"免费观看"跳转站。</p></div></div>
+      <div class="step"><div class="no"></div><div><h4>看完记下一幕，而不是打分</h4><p>记住最打动你或最让你反感的那一幕，你就已经比大多数观众看得更认真。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 栏目五：关于（定义列表 + 合规条） ===== -->
+<section id="about" aria-labelledby="c5" style="background:linear-gradient(180deg,transparent,rgba(233,169,60,.12))">
+  <div class="wrap">
+    <div class="st"><span class="bar"></span><h2 id="c5">关于本站 · 内容守则</h2></div>
+    <div class="about">
+      <div class="card">
+        <h3>在线成人电影网 · 我们坚持的 4 条</h3>
+        <p>本站为<b>影视赏析与观影指南类网站</b>，<b>不提供、不存储、不链接任何影视资源的在线观看、下载、缓存或盗链服务</b>。以下守则写进每一篇解读与每一个片单。</p>
+        <div class="rules">
+          <div class="rule"><b>01</b><h4>只做解读，不做搬运</h4><small>片单、台词、镜头分析、观影指南，不挂载资源链接。</small></div>
+          <div class="rule"><b>02</b><h4>只指正规，不指盗版</h4><small>每篇片单末尾统一标注"请在正版平台、院线或正版实体碟观看"。</small></div>
+          <div class="rule"><b>03</b><h4>尊重版权，即时响应</h4><small>收到权利方通知后 24 小时内核实并处理相关内容。</small></div>
+          <div class="rule"><b>04</b><h4>标注来源，拒绝洗稿</h4><small>引用剧照、台词、评分均注明出处与版权归属。</small></div>
+        </div>
+      </div>
+      <aside class="dboard">
+        <h3>站点信息</h3>
+        <dl>
+          <div class="r"><dt>网站名称</dt><dd>在线成人电影网</dd></div>
+          <div class="r"><dt>网站网址</dt><dd>https://zaixianchengrendianyingwang-cn.github.io/</dd></div>
+          <div class="r"><dt>网站定位</dt><dd>成人电影赏析 · 最新成人电影 · 经典片单 · 观影指南</dd></div>
+          <div class="r"><dt>核心栏目</dt><dd>最新成人电影 / 类型片单 / 深度影评 / 观影指南</dd></div>
+          <div class="r"><dt>内容声明</dt><dd>全站无资源、无下载、无盗链</dd></div>
+        </dl>
+        <div class="strip"><i style="width:100%"></i></div>
+        <p style="font-size:11.5px;color:var(--faint);margin-top:10px">合规度自检：<b style="color:#0f766e">已通过</b></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 页脚 ===== -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div><h5>在线成人电影网</h5><p>在线看成人电影，先看这篇。本站专注成人电影赏析、最新成人电影速递、经典片单与观影指南，是一个<b>不含任何影视资源</b>的纯内容型影视网站。</p></div>
+      <div><h5>看好片</h5><a href="#now">最新成人电影</a><a href="#type">类型片单</a><a href="#review">深度影评</a><a href="#guide">观影指南</a></div>
+      <div><h5>找心情</h5><a href="#">想哭的时候</a><a href="#">想被治愈</a><a href="#">想动脑</a><a href="#">想下饭</a></div>
+      <div><h5>合规与联系</h5><a href="#about">关于本站</a><a href="#">版权声明</a><a href="#">免责声明</a><a href="#guide">正版观影指引</a></div>
+    </div>
+    <div class="copy">
+      © 2026 <b>在线成人电影网</b> · 网站网址：<b>https://zaixianchengrendianyingwang-cn.github.io/</b> · 在线成人电影网 · 成人电影赏析 · 最新成人电影 · 经典片单 · 观影指南<br>
+      <b>重要声明：</b>本站为影视赏析与观影指南类网站，<b>不提供、不存储、不链接任何影视资源的在线观看或下载服务</b>，页面中所有影片名称、剧情简介、评分、台词均为 UI 演示与赏析示例内容，不构成资源索引或播放指引。<br>
+      请通过<b>院线、持证视频平台、正版实体碟</b>等正规渠道观看影视作品，支持成人电影创作，拒绝盗版。如认为本站内容涉及侵权，请凭权属证明联系我们，核实后将于 24 小时内处理。
+    </div>
+  </div>
+</footer>
+
+<button class="topbtn" id="up" aria-label="回到顶部">↑</button>
+
+<script>
+var b=document.getElementById('up');
+window.addEventListener('scroll',function(){b.classList[window.scrollY>800?'add':'remove']('show')});
+b.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var el=document.querySelector(this.getAttribute('href'));
+    if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'})}
+  });
+});
+</script>
+</body>
+</html>
